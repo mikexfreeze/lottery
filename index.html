@@ -186,22 +186,21 @@
             return html.join('');
         };
         var lottery = function(count){
-            var list = canvas.getElementsByTagName('a');
-            var color = 'yellow';
-            var ret = member
+            // count 为选择人数
+            if(count > 2){
+                // 正常抽取
+                var list = canvas.getElementsByTagName('a');
+                var color = 'yellow';
+                var ret = member
                 .filter(function(m, index){
                     m.index = index;
                     return !choosed[getKey(m)];
                 })
                 .map(function(m){
-                    if(m.score){
-                        return m
-                    }else{
-                        return Object.assign({
-                            score: Math.random()*100
-                        }, m);
-                    }
-                    
+                    console.log(Math.random())
+                    return Object.assign({
+                        score: Math.random()
+                    }, m);
                 })
                 .sort(function(a, b){
                     return a.score - b.score;
@@ -212,8 +211,12 @@
                   list[m.index].style.color = color;
                   return m.name + '<br/>' + m.phone; 
                 });
-            localStorage.setItem('choosed', JSON.stringify(choosed));
-            return ret;
+                localStorage.setItem('choosed', JSON.stringify(choosed));
+                return ret;
+            }else{
+                // 特殊处理
+            }
+            
         };
         var canvas = document.createElement('canvas');
         canvas.id = 'myCanvas';

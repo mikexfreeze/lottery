@@ -2,7 +2,7 @@ var member = [
   {
     "phone": "No.2038",
     "name": "星野冥一",
-    "score": 1
+    "score": 0
   },
   {
     "phone": "No.0282",
