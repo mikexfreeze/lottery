@@ -1,11 +1,13 @@
 var member = [
   {
     "phone": "No.2038",
-    "name": "星野冥一"
+    "name": "星野冥一",
+    "score": 1
   },
   {
     "phone": "No.0282",
-    "name": "Mr.Q"
+    "name": "Mr.Q",
+    "score": 0
   },
   {
     "phone": "No.3392",

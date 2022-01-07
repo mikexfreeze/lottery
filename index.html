@@ -194,9 +194,14 @@
                     return !choosed[getKey(m)];
                 })
                 .map(function(m){
-                    return Object.assign({
-                      score: Math.random()
-                    }, m);
+                    if(m.score){
+                        return m
+                    }else{
+                        return Object.assign({
+                            score: Math.random()*100
+                        }, m);
+                    }
+                    
                 })
                 .sort(function(a, b){
                     return a.score - b.score;
